@@ -1,6 +1,6 @@
 package com.mszlu.shop.common.vo;
 
-import com.mszlu.shop.common.model.BusinessCodeEnum;
+import com.mszlu.shop.common.eunms.BusinessCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -47,5 +47,13 @@ public class Result<T> implements Serializable {
 
     public static <T> Result<T> fail(){
         return new Result<>(true,BusinessCodeEnum.DEFAULT_SYS_ERROR.getMsg(),BusinessCodeEnum.DEFAULT_SYS_ERROR.getCode(),null);
+    }
+
+    public static <T> Result<T> noPermission(){
+        return new Result<>(false,BusinessCodeEnum.HTTP_NO_PERMISSION.getMsg(),BusinessCodeEnum.HTTP_NO_PERMISSION.getCode(),null);
+    }
+
+    public static <T> Result<T> noLogin() {
+        return new Result<>(false,BusinessCodeEnum.HTTP_NO_LOGIN.getMsg(),BusinessCodeEnum.HTTP_NO_LOGIN.getCode(),null);
     }
 }

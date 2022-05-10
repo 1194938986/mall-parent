@@ -1,4 +1,4 @@
-package com.mszlu.shop.common.model;
+package com.mszlu.shop.common.eunms;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +24,9 @@ public enum BusinessCodeEnum {
     CHECK_PARAM_NOT_MATCH(1000000001,"检查参数不匹配"),
     CHECK_BIZ_ERROR_VALIDATE_CODE(1000000002,"检查业务验证码错误"),
     CHECK_BIZ_ERROR_MOBILE_USED(1000000003,"检查业务电话号码已被使用"),
+    ILLEGAL_REQUEST(-999,"illegal_request"),
+    HTTP_NO_LOGIN(401,"登录已失效，请重新登录"),
+    HTTP_NO_PERMISSION(403,"抱歉，你没有访问权限"),
     //login
     NO_LOGIN(1000000200,"未登录");
 
